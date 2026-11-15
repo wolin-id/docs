@@ -1,7 +1,7 @@
 # WOLIN (月印千江) — Business Plan & Investment Memorandum
 
 > **Tagline**: *"One Identity. Infinite Reflections."* (달은 하나이나 천 개의 강물에 비친다.)  
-> **Company**: Entropy Paradox, Inc. (엔트로피패러독스 주식회사) · Co-CEOs: Charles Choi, Jungmo Kang  
+> **Company**: Entropy Paradox, Inc. (엔트로피패러독스 주식회사) · Co-CEOs: Yongcheol Choi, Jungmo Kang  
 > **Business Reg. No.**: 264-88-01993 · **HQ**: 79-4 Duteopbawi-ro, Yongsan-gu, Seoul, Republic of Korea  
 > **Service**: `https://wolin.id` · **Organization**: `https://github.com/wolin-id`  
 > **Date**: November 15, 2026
