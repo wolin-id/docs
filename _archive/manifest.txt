@@ -1,0 +1,1 @@
+2026-11-15: Archived DEVNET.md per YAGNI decision (use local --in-memory or Free tier Pod instead of public Devnet).
