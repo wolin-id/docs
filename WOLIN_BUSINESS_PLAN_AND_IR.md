@@ -92,7 +92,7 @@
 ## 6. Current Traction & Execution Roadmap (현재 진행 성과 & 로드맵)
 
 ### ✅ 완료된 핵심 마일스톤 (2026-11-16 기준)
-* **Wolin Rust 데이터 플레인 프로덕션 가동 (`https://pod.wolin.id` & `*.wolin.id`, `wolin-id/wolin`)**: 6대 크레이트 Rust 2024 최신화(**85/85** 테스트 통과), Per-Pod RocksDB 물리 격리 + Bounded LRU(`256`) + `1 GiB` 기본 쿼터, ~180개 예약 핸들 차단 + 영구 Tombstone(`410`), 단기 `HMAC-SHA256` `302` R2 에셋 오프로딩, `JwksSignatureVerifier` + DPoP `at+jwt` 검증, 홈서버 셀프호스팅 패키지 및 로컬 `--in-memory` 샌드박스 완성.
+* **Wolin Rust 데이터 플레인 프로덕션 가동 (`https://pod.wolin.id` & `*.wolin.id`, `wolin-id/wolin`)**: 6대 크레이트 Rust 2024 최신화(**85/85** 테스트 통과), Per-Pod RocksDB 물리 격리 + Bounded LRU(`256`) + `1 GiB` 기본 쿼터, ~180개 예약 핸들 차단 + 영구 Tombstone(`409`), 단기 `HMAC-SHA256` `302` R2 에셋 오프로딩, `JwksSignatureVerifier` + DPoP `at+jwt` 검증, 홈서버 셀프호스팅 패키지 및 로컬 `--in-memory` 샌드박스 완성.
 * **Wolin Cloud 인증·관제 플레인 프로덕션 가동 (`https://auth.wolin.id`, `wolin-id/cloud`)**: Cloudflare Workers + D1 기반 Passwordless Solid-OIDC Provider 라이브 배포, AWS SES v2(SigV4) 매직링크 및 GitHub OAuth 실전 가동(+ Google·Kakao·Apple·Naver·Discord 5개 어댑터 완비), 6개 국어(`en/zh/es/pt/ja/ko`) 현지화, Rybbit 퍼널 분석 + D1 무-PII 에러/피드백 루프 구축 완료.
 * **5대 공식 SDK + 메타버스 스타터 + AI 에이전트 스킬 완성**: `@wolin-id/client` & `@wolin-id/react` (`sdk-js`), `wolin-id` (`sdk-python`), `id.wolin.unity` (`sdk-unity`), `WolinKit` (`sdk-swift`), `id.wolin:sdk-kotlin` (`sdk-kotlin`), `wolin-id/metaverse-starter`, `wolin-id/skills` 전수 구현·검증 완료.
 * **웹 포털 & 공식 패키지 네임스페이스 (`https://wolin.id`)**: 6개 국어 공식 포털(Pricing/Prompts/Terms/Privacy/Refund, `/llms-full.txt`) 라이브 운영 + `crates.io` / `npm` / `ghcr.io` 네임스페이스 확보 완료.
