@@ -24,4 +24,13 @@
 2. **Dual Accessibility (Click-on-Lake + WASD)**: Following `하늘정원`, users on trackpads or mobile can tap/click anywhere on the salt lake to glide there smoothly with a water-ripple indicator, alongside `WASD`/Arrow keys.
 3. **Tactile Micro-Rituals With Meaning**: Upgrade `연등 띄우기` (Float Lantern) from a plain counter into a wish-bearing ritual where explorers can attach a short message to their glowing lotus lantern and click drifting lanterns to read them.
 4. **Moon Jar & Moss (`달항아리 이끼`) Heritage Anchor**: Place a Joseon white porcelain Moon Jar embraced by living moss (`#10B981`) beside the Bodhi meditation seat, grounding Wolin's Pod-as-a-Vessel philosophy in 3D space.
-5. **Mirror Moon Portals (`月印千江`)**: Every moon reflection on the salt lake acts as a live portal (`Moon 01 · Jarvis Sanctuary`, `Moon 02 · Topdoli`, `Moon 03 · Madang`, `Moon 04 · Jazz Bar`, plus dynamic `wolin:worldLinks` from the user's Pod).
+---
+
+## 3. Threads Viral Pulse (`2026-11-16`, `threads.com` Live Scan)
+
+1. **법당 메타버스 '산사' → 바이브코더 인디 메타버스 붐**: `sunstation.dev`(♥812·💬376) "산사가 쏘아올린 공으로 바이브코더들이 속속 메타버스를 내놓고 있다", `saelery.kim`(모두의 마을 185개 등록), `jangfolk`(메타모아 접속자·랭킹 오픈 ♥79·💬114).
+2. **메타버스 창작자 3대 고통 (Wolin이 정확히 해결하는 지점)**:
+   - **"이런 거 해서 돈이 벌리나?" (`atmark99` ♥55, `g1_ai_teacher`)** → Wolin **Spatial AdSlot & Wolin Pay** 수익화 내장.
+   - **"사람 데려오는 게 100배 어렵다" (`moonyu_ai`)** → Wolin **달 그림자 크로스월드 포털**로 유저 순환 유입.
+   - **"온라인 절 벌써 인기 식어가는 거야" (`sorinaesa`)** → 단발성 체험이 아닌 **영구 WebID · 소원 연등 · Pod 데이터 소유권**으로 리텐션 확보.
+
