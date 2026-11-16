@@ -1,16 +1,16 @@
-# WOLIN (月印千江) — Business Plan & Investment Memorandum
+# Wolin (月印千江) — Business Plan & Investment Memorandum
 
 > **Tagline**: *"One Identity. Infinite Reflections."* (달은 하나이나 천 개의 강물에 비친다.)  
 > **Company**: Entropy Paradox, Inc. (엔트로피패러독스 주식회사) · Co-CEOs: Yongcheol Choi, Jungmo Kang  
 > **Business Reg. No.**: 264-88-01993 · **HQ**: 79-4 Duteopbawi-ro, Yongsan-gu, Seoul, Republic of Korea  
 > **Service**: `https://wolin.id` · **Organization**: `https://github.com/wolin-id`  
-> **Date**: November 15, 2026
+> **Date**: November 16, 2026
 
 ---
 
 ## 1. Executive Summary (핵심 요약)
 
-**Wolin(월인)**은 웹·3D 메타버스·AI 앱이 파편화될 때마다 유저가 매번 새로 가입하고 아바타·프로필·데이터를 처음부터 다시 쌓아야 하는 **플랫폼 종속(Platform Lock-in) 문제**를 해결하는 **차세대 Sovereign Pod Cloud & 메타버스 아이덴티티 인프라**다.
+**Wolin(월인천강 · 月印千江)**은 웹·3D 메타버스·AI 앱이 파편화될 때마다 유저가 매번 새로 가입하고 아바타·프로필·데이터를 처음부터 다시 쌓아야 하는 **플랫폼 종속(Platform Lock-in) 문제**를 해결하는 **차세대 Sovereign Pod Cloud & 메타버스 아이덴티티 인프라**다.
 
 * **핵심 기술**: W3C Solid 0.11 + Solid-OIDC + DPoP(RFC 9449) + WAC/ACP 권한 엔진을 **단일 `<30MB` Rust 바이너리(`wolin-engine`)**로 구현해 기존 JVM/Node 기반 구현체 대비 압도적 메모리·지연시간 효율을 달성했다.
 * **대중화 돌파구**: 기존 Solid(Inrupt 등)가 패스키/복잡한 개발자 UX로 일반인 유입에 실패한 것과 달리, Wolin은 **Passwordless 6대 소셜(Google·Apple·Kakao·Naver·GitHub·Discord) 1:N 자동 병합 + 링크트리형 디지털 여권(`{pod_id}.wolin.id`) + 5개 언어 공식 SDK**를 제공한다.
@@ -35,10 +35,10 @@
 ## 3. Product & Technology Architecture (제품 및 기술 구조)
 
 ### 3.1 Open-Core 3-Repo + 5-SDK 생태계
-* **`wolin-id/wolin` (Open Core · MIT/Apache-2.0)**: Rust AOT 엔진 (`wolin-core`, `wolin-identity`, `wolin-policy`, `wolin-storage`, `wolin-mcp`, `wolin-server`). 홈서버 셀프호스팅과 SaaS 데이터 플레인을 단일 코드베이스로 통합.
-* **`wolin-id/cloud` (Private SaaS Control Plane)**: Cloudflare Workers + D1 기반 Passwordless Solid-OIDC Auth (`auth.wolin.id`), 1:N 소셜 계정 자동 병합, Consent UI, Airwallex 결제, 커스텀 도메인 관리.
-* **5대 공식 SDK**: TypeScript/React (`sdk-js`), Unity C# (`sdk-unity`), Swift (`sdk-swift`), Kotlin (`sdk-kotlin`), Python (`sdk-python`).
-* **AI 코딩 에이전트 친화 DevEx**: `/llms.txt`, `/llms-full.txt`, `wolin-id/skills`, Context7, `docs.wolin.id/mcp`를 통해 전 세계 개발자의 Claude/ChatGPT가 환각 없이 10줄 연동을 생성한다.
+* **`wolin-id/wolin` (Open Core · MIT/Apache-2.0 · `https://pod.wolin.id` & `*.wolin.id`)**: Rust AOT 엔진 (`wolin-core`, `wolin-identity`, `wolin-policy`, `wolin-storage`, `wolin-mcp`, `wolin-server`). Per-Pod RocksDB(`LRU 256`, `1 GiB` 쿼터), ~180개 예약 핸들 + Tombstone, 단기 `HMAC-SHA256` `302` R2 에셋 오프로딩, `JwksSignatureVerifier` + `at+jwt` DPoP 검증 내장.
+* **`wolin-id/cloud` (Private SaaS Control Plane · `https://auth.wolin.id`)**: Cloudflare Workers + D1 기반 Passwordless Solid-OIDC Auth, AWS SES v2 매직링크 + GitHub OAuth 라이브(외 5대 소셜 프로바이더 즉시 연동 준비 완료), 1:N 소셜 계정 자동 병합, 6개 국어(`en/zh/es/pt/ja/ko`) UI, Rybbit + D1 무-PII 에러/피드백 루프, R2 서명 에셋 스트리밍.
+* **5대 공식 SDK & 메타버스 스타터**: TypeScript/React (`@wolin-id/client`, `@wolin-id/react`), Python (`wolin-id`), Unity C# (`id.wolin.unity`), Swift (`WolinKit`), Kotlin (`id.wolin:sdk-kotlin`), 그리고 3D 월드 템플릿 (`wolin-id/metaverse-starter`).
+* **AI 코딩 에이전트 친화 DevEx**: `/llms.txt`, `/llms-full.txt`, `wolin-id/skills`, Context7, `docs.wolin.id/mcp` 및 로컬 `wolin-server --in-memory` / `$0` Free Tier(`1 GiB`) 구성을 통해 전 세계 개발자의 AI 에이전트가 환각 없이 즉시 연동을 생성한다.
 
 ### 3.2 핵심 차별화 기능
 1. **Wolin Passport (`{pod_id}.wolin.id`)**: 브라우저로 열면 링크트리형 3D 아바타·소셜 명함 + 앱 권한 1클릭 차단 스위치로 동작하고, 기계(`Accept: text/turtle`) 요청 시 표준 Solid RDF를 반환한다.
@@ -91,13 +91,13 @@
 
 ## 6. Current Traction & Execution Roadmap (현재 진행 성과 & 로드맵)
 
-### ✅ 완료된 핵심 마일스톤 (2026-11-15 기준)
-* **Wolin Rust 엔진 (`wolin-id/wolin`)**: 6대 크레이트 구현, Rust 2024 + Oxigraph 0.5 + OpenDAL 0.59 최신화(63/63 테스트 통과), **홈서버 셀프호스팅 패키지(`t_a9fe24f9`)** 완성.
-* **공식 패키지 네임스페이스 선점**: `crates.io` 7종(`wolin*`) + `npm` (`wolin`, `@wolin-id/client`) + `ghcr.io/wolin-id/wolin` 확보 완료.
-* **4대 SDK 완성 (`sdk-{unity,swift,kotlin,python}`)**: Unity UPM, Swift SPM, Kotlin Gradle, Python 패키징·테스트·CI 푸시 완료 (`sdk-js` 및 `wolin-id/cloud` 최종 리뷰 마무리 단계).
-* **웹 포털 & 결제 심사 준비 (`https://wolin.id`)**: Vercel/Stripe 스타일 공식 포털 라이브 운영 + Pricing/Terms/Privacy/Refund 페이지 및 법인 정보 반영 완료.
+### ✅ 완료된 핵심 마일스톤 (2026-11-16 기준)
+* **Wolin Rust 데이터 플레인 프로덕션 가동 (`https://pod.wolin.id` & `*.wolin.id`, `wolin-id/wolin`)**: 6대 크레이트 Rust 2024 최신화(**85/85** 테스트 통과), Per-Pod RocksDB 물리 격리 + Bounded LRU(`256`) + `1 GiB` 기본 쿼터, ~180개 예약 핸들 차단 + 영구 Tombstone(`410`), 단기 `HMAC-SHA256` `302` R2 에셋 오프로딩, `JwksSignatureVerifier` + DPoP `at+jwt` 검증, 홈서버 셀프호스팅 패키지 및 로컬 `--in-memory` 샌드박스 완성.
+* **Wolin Cloud 인증·관제 플레인 프로덕션 가동 (`https://auth.wolin.id`, `wolin-id/cloud`)**: Cloudflare Workers + D1 기반 Passwordless Solid-OIDC Provider 라이브 배포, AWS SES v2(SigV4) 매직링크 및 GitHub OAuth 실전 가동(+ Google·Kakao·Apple·Naver·Discord 5개 어댑터 완비), 6개 국어(`en/zh/es/pt/ja/ko`) 현지화, Rybbit 퍼널 분석 + D1 무-PII 에러/피드백 루프 구축 완료.
+* **5대 공식 SDK + 메타버스 스타터 + AI 에이전트 스킬 완성**: `@wolin-id/client` & `@wolin-id/react` (`sdk-js`), `wolin-id` (`sdk-python`), `id.wolin.unity` (`sdk-unity`), `WolinKit` (`sdk-swift`), `id.wolin:sdk-kotlin` (`sdk-kotlin`), `wolin-id/metaverse-starter`, `wolin-id/skills` 전수 구현·검증 완료.
+* **웹 포털 & 공식 패키지 네임스페이스 (`https://wolin.id`)**: 6개 국어 공식 포털(Pricing/Prompts/Terms/Privacy/Refund, `/llms-full.txt`) 라이브 운영 + `crates.io` / `npm` / `ghcr.io` 네임스페이스 확보 완료.
 
 ### 🚀 다음 마일스톤
-1. **`wolin-id/cloud` 실전 가동**: Passwordless Auth(`auth.wolin.id`) + Per-Pod Oxigraph 격리(`t_962a0f95`) + 무손실 이주(`t_7a1e0e91`) + Airwallex 결제(`t_4703f0e1`).
-2. **실서버 배포 & 생태계 실증**: AWS 서울 EC2 + R2 프로덕션 배포(`t_a71cd45a`) → 서로 다른 2개 웹/3D 앱 간 단일 WebID·아바타 공유 파일럿(`t_1f36a30c`).
-3. **오픈소스 정식 Public 런칭 (`t_9e8b355f`)**: `wolin-id/{wolin,web,docs,sdk-*}` 일괄 Public 전환 및 `v0.1.0` 릴리즈.
+1. **글로벌 결제 & 소셜 자격증명 전면 개방**: Airwallex Pro/Creator 결제 연동, 나머지 5대 소셜 OAuth 프로덕션 클라이언트 키 바인딩, 무손실 Pod 번들 이주(`wolin export/import`).
+2. **오픈소스 정식 Public 런칭 & 패키지 배포**: `wolin-id/{wolin,web,docs,skills,metaverse-starter,sdk-*}` `v0.1.0` 정식 릴리스 및 `crates.io` / `npm` / `PyPI` 최신 버전 배포.
+3. **Wolin Spatial AdSense 파일럿**: Verified 3D 월드 파트너 대상 CPC/CPA 및 3D 시야 기반 Zero-PII 광고 캠페인 실증.
