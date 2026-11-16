@@ -415,6 +415,12 @@ if __name__ == "__main__":
 
 ## 8. Core Protocol Guardrails (Built into All 5 SDKs)
 
+### Data Boundary: User Pod vs. Authoritative Game/App Server
+Because users hold write ownership over their own Pod (`PUT`/`PATCH`), **keep cheat-sensitive game economy and progression on your central server**:
+
+- **User Pod (`https://{handle}.wolin.id`)**: Game profile, avatar/skins, UGC (notes, wish lanterns, builds, screenshots), cross-world portal links, and **server-signed badges/achievements** (tamper-evident across worlds).
+- **Your Authoritative Server**: XP, levels, in-game currency/gold, leaderboards, and competitive match state.
+
 1. **`at+jwt` 액세스 토큰 강제**: `wolin-server`는 `id_token` 혼동 공격을 막기 위해 리소스 요청 시 JWT 헤더 `typ: "at+jwt"` 및 `cnf.jkt` 바인딩을 검증합니다(`401` 거부). 항상 `access_token`만 전달하십시오.
 2. **RFC 9449 `htu` 정규화 & `DPoP-Nonce` 자동 재시도**: 5대 SDK 모두 서명 시 URL의 `?query`와 `#fragment`를 자동 제거하고, 서버의 `DPoP-Nonce` 챌린지 응답 시 1회 자동 재서명합니다.
 3. **크레덴셜 무유출 `302 Found` 에셋 리다이렉트**: 대용량 바이너리(`>= 256 KiB`) 조회 시 반환되는 60초 만료 `HMAC-SHA256` 서명 URL(`https://auth.wolin.id/assets/{pod_id}/*`)을 따라갈 때 `Authorization` 및 `DPoP` 헤더를 자동 제거하여 교차 오리진 토큰 유출을 원천 차단합니다.
